@@ -4,11 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency-Converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div class="container">
-        <h1>Currency converter</h1>
-        
+        <h1>Currency Converter<hr></h1>
+        <div class="input-amt-container">
+            <p>Enter your amount</p>
+            <input type="number" class="input">
+        </div>
+            <div class="selection">
+                <div class="selection-container">
+                    <p>from</p>
+                    <div class="from-selection">
+                        <img src="https://flagsapi.com/US/flat/64.png" alt="USD">
+                        <select class="select" id="from"> </select>
+                    </div>
+                </div>
+                <i class="fa-solid fa-right-left"></i>
+                <div class="selection-container">
+                    <p>to</p>
+                    <div class="to-selection">
+                        <img src="https://flagsapi.com/IN/flat/64.png" alt="INR">
+                        <select class="select" id="to"></select>
+                    </div>
+                </div>
+            </div>
+        <div class="output">1 usd = 78.23 inr</div>
+        <button type="button">convert</button>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>

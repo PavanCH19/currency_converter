@@ -158,45 +158,6 @@ const countryList = {
     ZAR: "ZA",
     ZMK: "ZM",
     ZWD: "ZW",
-};
+  };
 
-let dropdowns = document.querySelectorAll(".select");
-let input = document.querySelector(".input");
-let conBtn = document.querySelector("button");
-
-let baseUrl = 
-input.value = 1;
-
-for(let select of dropdowns){
-    for(let currcode in countryList){
-        let option = document.createElement("option");
-        option.innerText = currcode;
-        option.value = currcode;
-        if(select.id === "from" && currcode === "USD"){
-            option.selected = "selected";
-        }
-        if(select.id === "to" && currcode === "INR"){
-            option.selected = "selected";
-        }
-        select.append(option);       
-    }
-    select.addEventListener("change", (evt) => {
-        updateFlag(evt.target);
-    });
-    
-}
-
-const updateFlag = (element) => {
-    let currcode = element.value;
-    let countrycode = countryList[currcode];
-    let flag = `https://flagsapi.com/${countrycode}/flat/64.png`;
-    let img = element.parentElement.querySelector("img");
-    img.src = flag;
-};
-
-conBtn.addEventListener("click", () => {
-    if (Number(input.value) < 0){
-        input.value = 1;
-    }
-
-});
+export { countryList };
